@@ -13,7 +13,10 @@ input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(evt) {
     const name = evt.target.value;
-    if (name) {
+    if (!name) {
+      countryInfo.innerHTML = '';
+      countryList.innerHTML = '';
+    } else {
         fetchCountries(name.trim())
         .then(obj => {
         if (obj.length >= 10) {
