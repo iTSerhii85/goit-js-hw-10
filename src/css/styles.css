@@ -22,19 +22,28 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   padding: 8px;
   max-width: 400px;
   margin-bottom: 16px;
+  z-index: 2;
 }
 
 li {
   list-style: none;
+  z-index: 2;
 }
 
 .country-list {
 padding: 0;
+position: relative;
+z-index: 2;
 }
 
 .card {
-  width: 400px;
-  height: 260px;
+  position: relative;
+  z-index: 2;
+  min-width: 400px;
+  min-height: 260px;
+  max-width: 500px;
+  width: fit-content;
+  height: fit-content;
   border: 2px solid white;
   border-radius: 72% 28% 70% 30% / 0% 100% 0% 100%;
   background: rgb(12,2,99);
@@ -46,6 +55,8 @@ padding: 0;
 }
 
 .countries {
+  position: relative;
+  z-index: 2;
   cursor: pointer;
   width: 400px;
   height: 100px;
@@ -60,6 +71,8 @@ padding: 0;
 }
 
 .input {
+  position: relative;
+  z-index: 2;
   color: #fff;
   border: none;
   border-radius: 8% 92% 8% 92% / 100% 0% 100% 0% ;
@@ -80,6 +93,28 @@ padding: 0;
 
  .img {
 position: fixed;
-top: -60px;
-right: 50px;
+z-index: 2;
+top: -70px;
+right: 0px;
  }
+
+ .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: auto
+ }
+
+ .video_intro {
+  position: relative;
+  height: auto;
+  width: 100%;
+ }
+
+ .intro {
+  height: 100vh;
+  overflow: hidden;
+ }
+

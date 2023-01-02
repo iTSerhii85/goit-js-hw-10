@@ -1,6 +1,6 @@
 import './css/styles.css';
 import debounce from "lodash.debounce";
-import { fetchCountries } from "./js/fetchCountries";
+import { fetchCountries, fetchSelectCountries } from "./js/fetchCountries";
 import Notiflix from 'notiflix';
 
 const DEBOUNCE_DELAY = 300;
@@ -10,6 +10,19 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
 input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
+countryList.addEventListener('click', onClick);
+
+function onClick (evt) {
+  
+  const country = evt.target.querySelector('span');
+  const nameCountry = country.textContent;
+
+  input.value = nameCountry;
+  
+  fetchSelectCountries(nameCountry)
+    .then(obj => {createMarkup(obj)})
+    .catch(error => Notiflix.Notify.failure('Oops, there is no country with that name'));
+}
 
 function onInput(evt) {
     const name = evt.target.value;
@@ -35,7 +48,7 @@ function createMarkup(obj) {
             `<li class="countries">
               <p>
               <img src="${obj.flags.svg}" alt="${obj.name.common}" width = "30"> &nbsp
-              ${obj.name.official}
+              <span>${obj.name.official}</span>
               </p>
             </li>`
             );
