@@ -46,6 +46,7 @@ padding: 0;
 }
 
 .countries {
+  cursor: pointer;
   width: 400px;
   height: 100px;
   border: 2px solid white;
