@@ -12,10 +12,10 @@
     "url": "git+https://github.com/iTSerhii85/goit-js-hw-10"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Serhii Prokip <it.meilmen85@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://iTSerhii85.github.io/goit-js-hw-10"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
